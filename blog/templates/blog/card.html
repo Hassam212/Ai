@@ -1,0 +1,43 @@
+{% extends 'blog/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block body %}
+
+{% for venue in item_list %}
+<div class="container ">
+        <div class="row">
+            <div class="card col">
+                <div class="card-header">
+                   <div class="card-brand">
+                    <h2> {{venue.item_title}}</h2>
+                    <i class="fa fa-link"></i>
+                   </div>
+                    <span class="badge">{{venue.item_head}}</span>
+                </div>
+                <div class="card-content">
+                    <p >
+                        {{venue.item_descript}}
+                    </p>
+
+                    <div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <span class="badge">chat</span>
+                    <i class="fa fa-heart" style="font-size: 20px;"></i>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+{% endfor %}
+
+{% endblock %}
+</body>
+</html>

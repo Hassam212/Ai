@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'blog/styleform.css' %}">
+    <title>Title</title>
+</head>
+<body>
+
+      <div class="row">
+          <div class="col-md-3 offset-md-2">
+              <form method="POST">
+                  {% csrf_token%}
+                  {{form}}
+                  <button type="submit">add</button>
+              </form>
+          </div>
+      </div>
+{% block body%}
+    {% endblock %}
+</body>
+</html>

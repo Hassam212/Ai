@@ -1,0 +1,53 @@
+{% extends 'blog/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block body %}
+{% if searched %}
+
+{% for venue in venues %}
+<div class="container ">
+        <div class="row">
+            <div class="card col-md-6">
+                <div class="card-header col-md-3">
+                   <div class="card-brand col-md-2">
+                    <h2> {{venue.item_title}}</h2>
+                    <i class="fa fa-link"></i>
+                   </div>
+                    <span class="badge">{{searched}}</span>
+                </div>
+                <div class="card-content">
+                    <p >
+                        {{venue.item_descript}}
+                    </p>
+
+                    <div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <span class="badge">chat</span>
+                    <i class="fa fa-heart" style="font-size: 20px;"></i>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+{% endfor %}
+{% else %}
+<h4>Error while searching</h4>
+<a class="scroll-top " id="scroll-top">
+    <i class="fa fa-arrow-up"></i>
+</a>
+{% endif %}
+
+{% endblock %}
+
+
+</body>
+</html>
